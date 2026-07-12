@@ -8,7 +8,7 @@ import {
   MapPin,
   CalendarPlus,
   X,
-  Chrome,
+  Globe,
   Apple,
   Calendar as CalendarIcon,
 } from "lucide-react";
@@ -214,7 +214,7 @@ END:VCALENDAR`;
           <div className={cn("space-y-3")}>
             <CalendarButton
               icon={(props) => (
-                <Chrome {...props} className={cn("w-5 h-5 text-rose-500")} />
+                <Globe {...props} className={cn("w-5 h-5 text-rose-500")} />
               )}
               label="Google Calendar"
               onClick={() => window.open(googleCalendarLink(), "_blank")}

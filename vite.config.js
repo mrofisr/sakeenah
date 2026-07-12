@@ -22,12 +22,26 @@ export default defineConfig({
     // Optimize chunk splitting
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Separate vendor chunks
-          "react-vendor": ["react", "react-dom", "react-router-dom"],
-          "animation-vendor": ["framer-motion"],
-          "query-vendor": ["@tanstack/react-query"],
-          "ui-vendor": ["lucide-react", "react-confetti"],
+        manualChunks(id) {
+          if (
+            id.includes("node_modules/react-dom") ||
+            id.includes("node_modules/react/") ||
+            id.includes("node_modules/react-router")
+          ) {
+            return "react-vendor";
+          }
+          if (id.includes("node_modules/framer-motion")) {
+            return "animation-vendor";
+          }
+          if (id.includes("node_modules/@tanstack/react-query")) {
+            return "query-vendor";
+          }
+          if (
+            id.includes("node_modules/lucide-react") ||
+            id.includes("node_modules/react-confetti")
+          ) {
+            return "ui-vendor";
+          }
         },
       },
     },
