@@ -95,7 +95,7 @@ Before you begin, ensure you have:
 3. **Add upstream remote** to sync with the main repository:
 
    ```bash
-   git remote add upstream https://github.com/mrofisr/sakeenah.git
+   git remote add upstream https://github.com/sakeenah-wedding/template.git
    ```
 
 ### Environment Setup
@@ -420,7 +420,7 @@ Organize components with clear separation of concerns:
 ```jsx
 // 1. Imports
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 
 // 2. Component definition
