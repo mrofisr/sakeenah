@@ -1,1 +1,7 @@
-bun x lint-staged
+#!/usr/bin/env bash
+set -e
+FILES=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(js|jsx)$' || true)
+if [ -n "$FILES" ]; then
+  echo "$FILES" | xargs bun x eslint --fix
+  echo "$FILES" | xargs bun x prettier --write
+fi

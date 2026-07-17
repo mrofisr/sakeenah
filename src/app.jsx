@@ -17,8 +17,8 @@
 // src/App.jsx
 import { useState, lazy, Suspense } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useInvitation } from "@/features/invitation";
+import { useMeta } from "@/hooks/use-meta";
 import { useAudio } from "@/hooks/use-audio";
 import staticConfig from "@/config/config";
 import { useMotionPreset } from "@/lib/motion";
@@ -74,6 +74,8 @@ function App() {
     setIsInvitationOpen(true);
   };
 
+  useMeta(activeConfig);
+
   // Show error state
   if (error) {
     return (
@@ -97,45 +99,7 @@ function App() {
   }
 
   return (
-    <HelmetProvider>
-      <Helmet>
-        {/* Primary Meta Tags */}
-        <title>{activeConfig.title}</title>
-        <meta name="title" content={activeConfig.title} />
-        <meta name="description" content={activeConfig.description} />
-        {/* Prevent Wayback Machine and Web Archiving */}
-        <meta name="robots" content="noindex, nofollow, noarchive, nocache" />
-        <meta name="googlebot" content="noindex, nofollow, noarchive" />
-        <meta name="bingbot" content="noindex, nofollow, noarchive" />
-        <meta name="archive" content="no" />
-        <meta
-          name="cache-control"
-          content="no-cache, no-store, must-revalidate"
-        />
-        <meta httpEquiv="Pragma" content="no-cache" />
-        <meta httpEquiv="Expires" content="0" />
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={window.location.href} />
-        <meta property="og:title" content={activeConfig.title} />
-        <meta property="og:description" content={activeConfig.description} />
-        <meta property="og:image" content={activeConfig.ogImage} />
-        {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content={window.location.href} />
-        <meta property="twitter:title" content={activeConfig.title} />
-        <meta
-          property="twitter:description"
-          content={activeConfig.description}
-        />
-        <meta property="twitter:image" content={activeConfig.ogImage} />
-        {/* Favicon */}
-        <link rel="icon" type="image/x-icon" href={activeConfig.favicon} />
-        {/* Additional Meta Tags */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#FDA4AF" /> {/* Rose-300 color */}
-      </Helmet>
-
+    <>
       {/* Loading overlay with exit animation */}
       <AnimatePresence>
         {isLoading && (
@@ -220,7 +184,7 @@ function App() {
           )}
         </AnimatePresence>
       </Suspense>
-    </HelmetProvider>
+    </>
   );
 }
 
