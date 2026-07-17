@@ -40,7 +40,7 @@ docker compose up -d    # or Docker
 
 ## Docs
 
-[Getting Started](wiki/Getting-Started.md) · [Deployment](wiki/Deployment.md) · [API](wiki/API-Reference.md) · [Architecture](wiki/Architecture.md) · [Structure](wiki/Project-Structure.md) · [Security](wiki/Security.md) · [Testing](wiki/Testing.md) · [Links](wiki/Personalized-Links.md)
+[Getting Started](https://github.com/sakeenah-wedding/template/wiki/Getting-Started) · [Deployment](https://github.com/sakeenah-wedding/template/wiki/Deployment) · [API](https://github.com/sakeenah-wedding/template/wiki/API-Reference) · [Architecture](https://github.com/sakeenah-wedding/template/wiki/Architecture) · [Structure](https://github.com/sakeenah-wedding/template/wiki/Project-Structure) · [Security](https://github.com/sakeenah-wedding/template/wiki/Security) · [Testing](https://github.com/sakeenah-wedding/template/wiki/Testing) · [Links](https://github.com/sakeenah-wedding/template/wiki/Personalized-Links)
 
 ---
 
