@@ -8,16 +8,18 @@ assignees: ""
 
 ## Problem
 
-<!-- What problem does this solve? -->
+What problem does this solve?
 
-## Proposed solution
+## Solution
 
-<!-- What you'd like to happen -->
+What should happen?
 
 ## Alternatives
 
-<!-- Other options you considered -->
+What else have you considered?
 
-## Notes
+## Islamic considerations
 
-<!-- Mockups, context, or related issues -->
+- [ ] Needs Islamic content review
+- [ ] Supports RTL languages
+- [ ] Respects modesty guidelines

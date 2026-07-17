@@ -1,30 +1,28 @@
 ---
 name: Bug Report
-about: Report a problem
+about: Report a bug
 title: "[BUG] "
 labels: bug
 assignees: ""
 ---
 
-## What happened
+## What happened?
 
-<!-- Describe the bug -->
+Describe the bug and steps to reproduce.
 
-## Steps to reproduce
+## Expected vs actual
 
-1.
-2.
-3.
-
-## Expected behavior
-
-<!-- What you expected instead -->
+What should happen vs what actually happens.
 
 ## Environment
 
-- OS / Browser:
-- Version:
+- OS: [e.g. macOS, Linux]
+- Browser: [e.g. Chrome 120]
+- Bun version:
+- Deployment: [Local / Cloudflare]
 
-## Notes
+## Screenshots / Logs
 
-<!-- Screenshots, logs, or extra context -->
+```
+Paste error messages here
+```

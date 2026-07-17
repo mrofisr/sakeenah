@@ -8,8 +8,15 @@ assignees: ""
 
 ## Question
 
-<!-- Ask your question clearly -->
+Ask away.
 
-## Context
+## What I've tried
 
-<!-- Anything that helps us answer -->
+- [ ] I've read the README
+- [ ] I've searched existing issues
+
+## Environment (if relevant)
+
+- OS:
+- Bun version:
+- Deployment:

@@ -1,5 +1,5 @@
 import { useConfig } from "@/features/invitation/hooks/use-config";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Copy, Gift, CheckCircle, Wallet, Building2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useMotionPreset, staggerContainer } from "@/lib/motion";

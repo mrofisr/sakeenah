@@ -1,6 +1,6 @@
 import { useConfig } from "@/features/invitation/hooks/use-config";
 import { formatEventDate } from "@/lib/format-event-date";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Calendar, Clock } from "lucide-react";
 import {
   useMotionPreset,

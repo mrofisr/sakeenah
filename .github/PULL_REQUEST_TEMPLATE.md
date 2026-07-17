@@ -1,20 +1,24 @@
-## What & why
+## Description
 
-<!-- Briefly describe the change and the reason for it -->
+What does this PR do and why?
 
 ## Type
 
 - [ ] Bug fix
-- [ ] Feature
+- [ ] New feature
 - [ ] Breaking change
-- [ ] Docs / chore
+- [ ] Docs
+- [ ] UI/UX
+- [ ] Refactor
+- [ ] Tests
 
 ## Checklist
 
-- [ ] Tested locally
+- [ ] Self-review done
+- [ ] Tested manually
+- [ ] No new warnings
 - [ ] `bun run lint` passes
-- [ ] Docs updated if needed
 
 ## Related issues
 
-<!-- e.g. Closes #123 -->
+Closes #

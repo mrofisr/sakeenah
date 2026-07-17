@@ -25,7 +25,7 @@ export default [
         sourceType: "module",
       },
     },
-    settings: { react: { version: "18.3" } },
+    settings: { react: { version: "19.2" } },
     plugins: {
       react,
       "react-hooks": reactHooks,
@@ -51,6 +51,10 @@ export default [
 
       // Keep hook dependency warnings (errors for strictness)
       "react-hooks/exhaustive-deps": "error",
+      // Disable new strict rules from react-hooks v7 (enable and fix later)
+      "react-hooks/set-state-in-effect": "off",
+      "react-hooks/static-components": "off",
+      "react-hooks/purity": "off",
     },
   },
 
@@ -78,6 +82,8 @@ export default [
           varsIgnorePattern: "^_",
         },
       ],
+      // Disable new strict rules from ESLint 10
+      "preserve-caught-error": "off",
     },
   },
 

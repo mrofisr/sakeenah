@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { Music, PauseCircle, PlayCircle } from "lucide-react";
 import { useConfig } from "@/features/invitation/hooks/use-config";
 import BottomBar from "@/components/layout/bottom-bar";

@@ -1,19 +1,19 @@
 ---
-name: Documentation
-about: Suggest a docs improvement
+name: Documentation Improvement
+about: Suggest docs improvements
 title: "[DOCS] "
 labels: documentation
 assignees: ""
 ---
 
-## What's wrong or missing
+## What's wrong?
 
-<!-- Describe the docs issue -->
+What's unclear, missing, or incorrect?
 
-## Location
+## Where?
 
-<!-- File path or URL -->
+File path and section.
 
-## Suggested improvement
+## Suggested fix
 
-<!-- How to fix it -->
+What should it say instead?

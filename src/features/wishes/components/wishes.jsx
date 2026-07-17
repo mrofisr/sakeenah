@@ -1,5 +1,5 @@
-import { motion, AnimatePresence } from "framer-motion";
-import Confetti from "react-confetti";
+import { motion, AnimatePresence } from "motion/react";
+import Confetti from "@/components/ui/confetti";
 import Marquee from "@/components/ui/marquee";
 import { cn } from "@/lib/utils";
 import {
@@ -186,7 +186,7 @@ export default function Wishes() {
         id="wishes"
         className={cn("min-h-screen relative overflow-hidden")}
       >
-        {showConfetti && <Confetti recycle={false} numberOfPieces={200} />}
+        <Confetti show={showConfetti} />
         <div className={cn("container mx-auto px-4 py-20 relative z-10")}>
           {/* Section Header */}
           <motion.div
