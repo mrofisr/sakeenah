@@ -21,9 +21,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"bun run dev:client\" \"bun run dev:server\"",
+    "dev": "concurrently \"bun run dev:client\" \"bun run server\"",
     "dev:client": "vite",
-    "dev:server": "bun src/server/server.js",
     "build": "vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
