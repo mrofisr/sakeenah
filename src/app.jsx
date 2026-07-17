@@ -16,7 +16,7 @@
 
 // src/App.jsx
 import { useState, lazy, Suspense } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useInvitation } from "@/features/invitation";
 import { useAudio } from "@/hooks/use-audio";

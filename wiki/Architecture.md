@@ -7,7 +7,7 @@ Sakeenah is built on a modern client-server architecture optimized for edge depl
 ```
 ┌──────────────────┐
 │   Client (SPA)   │  React + Vite (Port 5173)
-│  Mobile-First    │  React Router v7 + Framer Motion
+│  Mobile-First    │  React Router v7 + Motion
 └────────┬─────────┘
          │ HTTPS/REST
 ┌────────▼─────────┐
@@ -27,12 +27,12 @@ Sakeenah is built on a modern client-server architecture optimized for edge depl
 | Layer      | Technology         | Purpose                                   |
 | ---------- | ------------------ | ----------------------------------------- |
 | Runtime    | Bun 1.3.5          | Package management and server execution   |
-| Frontend   | React 18 + Vite    | Fast build tooling and reactive UI        |
+| Frontend   | React 19 + Vite    | Fast build tooling and reactive UI        |
 | Backend    | Hono               | Lightweight edge-compatible API framework |
 | Validation | Zod                | Type-safe schema validation for API       |
 | Database   | PostgreSQL         | Multi-tenant data storage                 |
 | Styling    | Tailwind CSS       | Utility-first responsive design           |
-| Animation  | Framer Motion      | Declarative animations and transitions    |
+| Animation  | Motion             | Declarative animations and transitions    |
 | Query      | TanStack Query     | Server state management and caching       |
 | Deployment | Cloudflare Workers | Global edge network distribution          |
 

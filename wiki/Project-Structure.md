@@ -69,7 +69,7 @@ sakeenah/
 │   ├── main.jsx                     # React entry point
 │   └── index.css                    # Global styles
 ├── public/                          # Static assets
-├── docs/                            # Documentation
+├── wiki/                            # GitHub Wiki documentation
 ├── vite.config.js                   # Vite bundler configuration
 ├── wrangler.jsonc                   # Cloudflare Workers config
 └── package.json

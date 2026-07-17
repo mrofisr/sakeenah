@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import Confetti from "react-confetti";
 import Marquee from "@/components/ui/marquee";
 import { cn } from "@/lib/utils";

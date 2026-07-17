@@ -30,7 +30,7 @@ export default defineConfig({
           ) {
             return "react-vendor";
           }
-          if (id.includes("node_modules/framer-motion")) {
+          if (id.includes("node_modules/motion")) {
             return "animation-vendor";
           }
           if (id.includes("node_modules/@tanstack/react-query")) {
@@ -58,7 +58,7 @@ export default defineConfig({
       "react",
       "react-dom",
       "react-router-dom",
-      "framer-motion",
+      "motion",
       "@tanstack/react-query",
     ],
   },

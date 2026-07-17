@@ -75,6 +75,6 @@ Replace `your-wedding-uid` with the UID you defined in your SQL file.
 
 ## Next Steps
 
-- [Generate personalized guest links](../how-to/personalized-links.md)
-- [Deploy to production](../how-to/deployment.md)
-- [API Reference](../reference/api.md)
+- [[Personalized Links]]
+- [[Deployment]]
+- [[API Reference]]

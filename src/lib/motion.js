@@ -15,7 +15,7 @@
  * opacity-only (or instant), and decorative loops can be suppressed.
  */
 
-import { useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "motion/react";
 
 /** Named duration tiers (seconds). */
 export const DURATION = {
@@ -113,7 +113,7 @@ export const pageExit = {
 /**
  * Container variant that staggers its children's reveals evenly.
  * @param {number} [step=DURATION.fast] - Delay between each child (seconds)
- * @returns {import('framer-motion').Variants}
+ * @returns {import('motion/react').Variants}
  */
 export const staggerContainer = (step = DURATION.fast) => ({
   hidden: {},

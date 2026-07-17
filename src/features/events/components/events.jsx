@@ -1,6 +1,6 @@
 import EventCards from "@/features/events/components/events-card";
 import { useConfig } from "@/features/invitation/hooks/use-config";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Heart } from "lucide-react";
 import { useMotionPreset, staggerContainer } from "@/lib/motion";
 import { cn } from "@/lib/utils";

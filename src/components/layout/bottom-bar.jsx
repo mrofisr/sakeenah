@@ -1,6 +1,6 @@
 // src/components/bottom-bar/BottomBar.jsx
 import React, { useEffect, useCallback, useMemo } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import {
   Home,
   CalendarHeart,
