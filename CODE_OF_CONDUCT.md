@@ -119,6 +119,3 @@ Community Impact Guidelines were inspired by [Mozilla's code of conduct enforcem
 
 If you have questions about this Code of Conduct, please open an issue or contact [@mrofisr](https://github.com/mrofisr).
 
----
-
-**"The believers, in their love, mercy, and kindness to one another are like a body: if any part of it is ill, the whole body shares its sleeplessness and fever."** - Prophet Muhammad (ﷺ), Sahih Muslim 2586
