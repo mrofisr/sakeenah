@@ -46,4 +46,3 @@ docker compose up -d    # or Docker
 
 Apache 2.0 · [@mrofisr](https://github.com/mrofisr) · Built with [Vite](https://vite.dev/), [React](https://react.dev/), [Hono](https://hono.dev/) · Animations by [Motion](https://motion.dev/) · Icons by [Lucide](https://lucide.dev/)
 
-*"And among His signs is that He created for you spouses from among yourselves so that you may find comfort in them."* — Quran 30:21
