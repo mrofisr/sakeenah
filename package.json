@@ -1,7 +1,7 @@
 {
   "name": "sakeenah",
   "description": "Modern Islamic wedding invitation platform with multi-tenant architecture",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "author": "mrofisr",
   "license": "Apache-2.0",
   "repository": {
