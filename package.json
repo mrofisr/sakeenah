@@ -31,7 +31,7 @@
     "format:check": "prettier --check .",
     "preview": "vite preview",
     "server": "bun src/server/server.js",
-    "generate-links": "bun generate-links-example.js",
+    "generate-links": "bun generate-links.js",
     "deploy": "bun run build && wrangler deploy",
     "cf:dev": "wrangler dev",
     "cf:deploy": "wrangler deploy",

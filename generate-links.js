@@ -2,7 +2,7 @@
  * Example script to generate personalized invitation links
  *
  * Usage:
- *   bun run generate-links-example.js
+ *   bun run generate-links
  *
  * This will output personalized invitation links for each guest
  */
