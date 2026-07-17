@@ -41,7 +41,7 @@
     "test:unit": "vitest run src/server/**/*.spec.js",
     "test:e2e": "vitest run e2e/**/*.e2e.spec.js",
     "test:coverage": "vitest run --coverage",
-    "prepare": "bun x husky || true"
+    "prepare": "bun run scripts/install-hooks.sh"
   },
   "dependencies": {
     "@hono/node-server": "^2.0.8",
