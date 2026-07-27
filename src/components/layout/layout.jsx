@@ -63,7 +63,7 @@ const Layout = ({ children, audioControls }) => {
             whileTap={{ scale: 0.9 }}
             onClick={toggle}
             className={cn(
-              "absolute top-4 right-4 z-50 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-lg border border-rose-100/50",
+              "relative top-4 right-4 z-50 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-lg border border-rose-100/50",
             )}
           >
             {isPlaying ? (
@@ -95,7 +95,7 @@ const Layout = ({ children, audioControls }) => {
               animate="visible"
               exit="exit"
               className={cn(
-                "absolute bottom-24 left-1/2 transform -translate-x-1/2 z-50",
+                "relative bottom-24 left-1/2 transform -translate-x-1/2 z-50",
               )}
             >
               <div
