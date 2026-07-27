@@ -95,12 +95,12 @@ const Layout = ({ children, audioControls }) => {
               animate="visible"
               exit="exit"
               className={cn(
-                "relative bottom-24 left-1/2 transform -translate-x-1/2 z-50",
+                "absolute bottom-24 left-1/2 -translate-x-1/2 z-50",
               )}
             >
               <div
                 className={cn(
-                  "bg-black/80 text-white transform -translate-x-1/2 px-4 py-2 rounded-full backdrop-blur-sm flex items-center space-x-2",
+                  "bg-black/80 text-white px-4 py-2 rounded-full backdrop-blur-sm flex items-center space-x-2",
                 )}
               >
                 <Music className={cn("w-4 h-4 animate-pulse")} />
