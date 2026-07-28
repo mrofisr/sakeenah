@@ -95,7 +95,7 @@ const Layout = ({ children, audioControls }) => {
               animate="visible"
               exit="exit"
               className={cn(
-                "absolute bottom-24 left-1/2 -translate-x-1/2 z-50",
+                "absolute bottom-24 inset-x-0 z-50 flex justify-center",
               )}
             >
               <div
