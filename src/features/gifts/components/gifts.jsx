@@ -1,4 +1,5 @@
 import { useConfig } from "@/features/invitation/hooks/use-config";
+import { useTranslation } from "@/lib/i18n";
 import { motion } from "motion/react";
 import { Copy, Gift, CheckCircle, Wallet, Building2 } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -7,6 +8,7 @@ import { cn } from "@/lib/utils";
 
 export default function Gifts() {
   const config = useConfig(); // Use hook to get config from API or fallback to static
+  const { t } = useTranslation();
   const [copiedAccount, setCopiedAccount] = useState(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const fade = useMotionPreset("fade");
@@ -47,14 +49,14 @@ export default function Gifts() {
               variants={fadeUp}
               className={cn("inline-block text-rose-500 font-medium")}
             >
-              Hadiah Pernikahan
+              {t("gifts.subTitle")}
             </motion.span>
 
             <motion.h2
               variants={fadeUp}
               className={cn("text-4xl md:text-5xl font-serif text-gray-800")}
             >
-              Berikan Hadiah
+              {t("gifts.title")}
             </motion.h2>
 
             {/* Decorative Divider */}
@@ -77,13 +79,9 @@ export default function Gifts() {
                 إن شاء الله
               </p>
 
-              {/* Main Message */}
               <p className={cn("text-gray-600 leading-relaxed")}>
-                Insya Allah, Kami Akan Menyalurkan Semua Hadiah yang Diberikan
-                ke Beberapa Masjid dan Lembaga yang Membutuhkan
+                {t("gifts.message")}
               </p>
-
-              {/* Arabic Dua */}
               <div className={cn("space-y-2")}>
                 <p className={cn("font-arabic text-lg text-gray-800")}>
                   جزاكم الله خيرا وبارك الله فيكم
@@ -176,7 +174,7 @@ export default function Gifts() {
                           <Copy className={cn("w-4 h-4")} />
                         )}
                         <span className={cn("text-sm")}>
-                          {copiedAccount === account.bank ? "Copied!" : "Copy"}
+                          {copiedAccount === account.bank ? t("gifts.copied") : t("gifts.copy")}
                         </span>
                       </motion.button>
                     </div>

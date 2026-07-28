@@ -22,9 +22,11 @@ import { useInvitation } from "@/features/invitation";
 import { fetchWishes, createWish, checkWishSubmitted } from "@/services/api";
 import { getGuestName } from "@/lib/invitation-storage";
 import { useMotionPreset, staggerContainer, stagger } from "@/lib/motion";
+import { useTranslation } from "@/lib/i18n";
 
 export default function Wishes() {
   const { uid } = useInvitation();
+  const { t } = useTranslation();
   const queryClient = useQueryClient();
   const fade = useMotionPreset("fade");
   const fadeUp = useMotionPreset("fadeUp");
@@ -86,9 +88,9 @@ export default function Wishes() {
   }, [isOpen]);
 
   const options = [
-    { value: "ATTENDING", label: "Ya, saya akan hadir" },
-    { value: "NOT_ATTENDING", label: "Tidak, saya tidak bisa hadir" },
-    { value: "MAYBE", label: "Mungkin, saya akan konfirmasi nanti" },
+    { value: "ATTENDING", label: t("wishes.attending") },
+    { value: "NOT_ATTENDING", label: t("wishes.notAttending") },
+    { value: "MAYBE", label: t("wishes.maybe") },
   ];
 
   // Fetch wishes using React Query
@@ -103,7 +105,7 @@ export default function Wishes() {
       if (response.success) {
         return response.data;
       }
-      throw new Error("Failed to load wishes");
+      throw new Error(t("wishes.failedLoad"));
     },
     enabled: !!uid,
     staleTime: 30 * 1000, // 30 seconds
@@ -140,7 +142,7 @@ export default function Wishes() {
         setHasSubmittedWish(true);
         setErrorMessage("");
       } else {
-        setErrorMessage("Gagal mengirim pesan. Silakan coba lagi.");
+        setErrorMessage(t("wishes.failedSubmit"));
         // Auto-hide error after 5 seconds
         setTimeout(() => setErrorMessage(""), 5000);
       }
@@ -152,7 +154,7 @@ export default function Wishes() {
     if (!newWish.trim() || !guestName.trim()) return;
 
     if (!uid) {
-      setErrorMessage("Undangan tidak ditemukan. Silakan periksa URL Anda.");
+      setErrorMessage(t("wishes.invitationNotFound"));
       setTimeout(() => setErrorMessage(""), 5000);
       return;
     }
@@ -199,14 +201,14 @@ export default function Wishes() {
               variants={fadeUp}
               className={cn("inline-block text-rose-500 font-medium")}
             >
-              Kirimkan Doa dan Harapan Terbaik Anda
+              t("wishes.subTitle")
             </motion.span>
 
             <motion.h2
               variants={fadeUp}
               className={cn("text-4xl md:text-5xl font-serif text-gray-800")}
             >
-              Pesan dan Doa
+              t("wishes.title")
             </motion.h2>
 
             {/* Decorative Divider */}
@@ -250,7 +252,7 @@ export default function Wishes() {
                   className={cn("w-12 h-12 text-gray-300 mx-auto mb-4")}
                 />
                 <p className={cn("text-gray-500")}>
-                  Belum ada pesan. Jadilah yang pertama!
+                  {t("wishes.emptyState")}
                 </p>
               </div>
             )}
@@ -454,11 +456,11 @@ export default function Wishes() {
                             className={cn("text-sm font-medium text-gray-700")}
                           >
                             {selectedWish.attendance === "ATTENDING" &&
-                              "Akan hadir"}
+              t("wishes.attending")
                             {selectedWish.attendance === "NOT_ATTENDING" &&
-                              "Tidak bisa hadir"}
+                              "t("wishes.notAttending")"}
                             {selectedWish.attendance === "MAYBE" &&
-                              "Mungkin hadir"}
+                              t("wishes.maybe")}
                           </span>
                         </div>
                       )}
@@ -489,7 +491,7 @@ export default function Wishes() {
                           "px-6 py-2 bg-rose-500 hover:bg-rose-600 text-white rounded-lg font-medium transition-colors",
                         )}
                       >
-                        Tutup
+                        {t("wishes.close")}
                       </button>
                     </div>
                   </motion.div>
@@ -514,14 +516,14 @@ export default function Wishes() {
                 <div className={cn("flex flex-col items-center space-y-4")}>
                   <CheckCircle className={cn("w-16 h-16 text-emerald-500")} />
                   <h3 className={cn("text-2xl font-serif text-gray-800")}>
-                    Terima Kasih!
+              t("wishes.thankYou")
                   </h3>
                   <p className={cn("text-gray-600")}>
-                    Pesan dan doa Anda telah terkirim. Kami sangat menghargai
-                    ucapan Anda.
+                    {t("wishes.successMessage")}
+                    t("wishes.successMessage")
                   </p>
                   <p className={cn("text-sm text-gray-500 italic")}>
-                    Setiap tamu hanya dapat mengirim satu pesan.
+                    {t("wishes.oneMessageLimit")}
                   </p>
                 </div>
               </div>
@@ -577,14 +579,14 @@ export default function Wishes() {
                         )}
                       >
                         <User className={cn("w-4 h-4")} />
-                        <label htmlFor="guest-name">Nama Kamu</label>
+                        <label htmlFor="guest-name">{t("wishes.nameLabel")}</label>
                       </div>
                       <input
                         type="text"
                         id="guest-name"
                         name="guestName"
                         autoComplete="name"
-                        placeholder="Masukan nama kamu..."
+                        placeholder={t("wishes.namePlaceholder")}
                         value={guestName}
                         onChange={(e) => {
                           setGuestName(e.target.value);
@@ -614,7 +616,7 @@ export default function Wishes() {
                       >
                         <Calendar className={cn("w-4 h-4")} />
                         <label htmlFor="attendance-select">
-                          Apakah kamu hadir?
+            t("wishes.attendanceLabel")
                         </label>
                       </div>
 
@@ -627,7 +629,7 @@ export default function Wishes() {
                         className={cn("sr-only")}
                         aria-hidden="true"
                       >
-                        <option value="">Pilih kehadiran...</option>
+              t("wishes.attendancePlaceholder")
                         {options.map((option) => (
                           <option key={option.value} value={option.value}>
                             {option.label}
@@ -639,7 +641,7 @@ export default function Wishes() {
                       <button
                         type="button"
                         onClick={() => setIsOpen(!isOpen)}
-                        aria-label="Pilih status kehadiran"
+                        aria-label={t("wishes.attendanceLabel")}
                         aria-expanded={isOpen}
                         aria-controls="attendance-dropdown"
                         className={cn(
@@ -654,7 +656,7 @@ export default function Wishes() {
                           {attendance
                             ? options.find((opt) => opt.value === attendance)
                                 ?.label
-                            : "Pilih kehadiran..."}
+              t("wishes.attendancePlaceholder")
                         </span>
                         <ChevronDown
                           className={cn(
@@ -710,12 +712,12 @@ export default function Wishes() {
                         )}
                       >
                         <MessageCircle className={cn("w-4 h-4")} />
-                        <label htmlFor="wish-message">Harapan kamu</label>
+                        <label htmlFor="wish-message">{t("wishes.wishLabel")}</label>
                       </div>
                       <textarea
                         id="wish-message"
                         name="message"
-                        placeholder="Kirimkan harapan dan doa untuk kedua mempelai..."
+                        placeholder={t("wishes.wishPlaceholder")}
                         value={newWish}
                         onChange={(e) => setNewWish(e.target.value)}
                         className={cn(
@@ -749,8 +751,8 @@ export default function Wishes() {
                       )}
                       <span>
                         {createWishMutation.isPending
-                          ? "Sedang Mengirim..."
-                          : "Kirimkan Doa"}
+                          ? t("wishes.sending")
+                          : t("wishes.sendButton")}
                       </span>
                     </motion.button>
                   </div>

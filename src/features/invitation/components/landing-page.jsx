@@ -1,3 +1,4 @@
+import { useTranslation } from "@/lib/i18n";
 import { useConfig } from "@/features/invitation/hooks/use-config";
 import { formatEventDate } from "@/lib/format-event-date";
 import { motion } from "motion/react";
@@ -15,6 +16,7 @@ const LandingPage = ({ onOpenInvitation }) => {
   const reduceMotion = useReducedMotionFlag();
   const fade = useMotionPreset("fade");
   const fadeUp = useMotionPreset("fadeUp");
+  const { t } = useTranslation();
 
   return (
     <motion.div
@@ -129,7 +131,7 @@ const LandingPage = ({ onOpenInvitation }) => {
                     "relative z-10 flex items-center justify-center gap-2",
                   )}
                 >
-                  <span>Buka Undangan</span>
+                  <span>{t("landing.openInvitation")}</span>
                   <motion.span
                     animate={reduceMotion ? undefined : { x: [0, 4, 0] }}
                     transition={

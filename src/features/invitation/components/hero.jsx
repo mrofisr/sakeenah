@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { useConfig } from "@/features/invitation/hooks/use-config";
 import { formatEventDate } from "@/lib/format-event-date";
 import { getGuestName } from "@/lib/invitation-storage";
+import { useTranslation } from "@/lib/i18n";
 import {
   useMotionPreset,
   staggerContainer,
@@ -14,6 +15,7 @@ import {
 } from "@/lib/motion";
 
 export default function Hero() {
+  const { t } = useTranslation();
   const config = useConfig(); // Use hook to get config from API or fallback to static
   const [guestName, setGuestName] = useState("");
   const reduceMotion = useReducedMotionFlag();
@@ -36,10 +38,10 @@ export default function Hero() {
 
       if (difference > 0) {
         timeLeft = {
-          hari: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          jam: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          menit: Math.floor((difference / 1000 / 60) % 60),
-          detik: Math.floor((difference / 1000) % 60),
+          [t("hero.days")]: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          [t("hero.hours")]: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          [t("hero.minutes")]: Math.floor((difference / 1000 / 60) % 60),
+          [t("hero.seconds")]: Math.floor((difference / 1000) % 60),
         };
       }
       return timeLeft;
@@ -156,7 +158,7 @@ export default function Hero() {
                 "px-4 py-1 text-sm bg-rose-50 text-rose-600 rounded-full border border-rose-200",
               )}
             >
-              Catat Tanggal Penting Ini
+              {t("landing.saveTheDate")}
             </span>
           </motion.div>
 
@@ -167,7 +169,7 @@ export default function Hero() {
                 "text-gray-500 font-light italic text-base sm:text-lg",
               )}
             >
-              InsyaAllah Kami Akan Menikah
+              {t("hero.marriageTitle")}
             </motion.p>
             <motion.h2
               variants={scaleIn}
@@ -245,13 +247,13 @@ export default function Hero() {
 
                 <motion.div variants={fade} className={cn("space-y-2")}>
                   <p className={cn("text-gray-500 font-serif italic text-sm")}>
-                    Kepada Yth.
+                    {t("hero.guestGreeting")}
                   </p>
                   <p className={cn("text-gray-600 font-medium text-sm")}>
-                    Bapak/Ibu/Saudara/i
+                    {t("hero.guestSalutation")}
                   </p>
                   <p className={cn("text-rose-500 font-semibold text-lg")}>
-                    {guestName || "Tamu Undangan"}
+                    {guestName || t("hero.guestFallback")}
                   </p>
                 </motion.div>
               </div>
