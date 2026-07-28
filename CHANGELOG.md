@@ -5,30 +5,43 @@ All notable changes to Sakeenah will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-
-### Added
-
-- **Name input lock**: Guest name field automatically disabled when detected from invitation URL/localStorage to prevent impersonation (afc8be6)
-- **Inline error messages**: Beautiful animated error banners replacing browser alert() dialogs for better UX (5155c57)
-- AlertCircle icon for error state visualization in wishes form (5155c57)
-
-### Changed
-
-- Wish form errors now display as inline rose-colored banners instead of blocking alert() dialogs (5155c57)
-- Error messages auto-dismiss after 5 seconds with manual close option (5155c57)
-- Name input styling updated to show disabled state with gray background and reduced opacity (afc8be6)
-- Simplified UX by removing explanatory helper text from disabled name input (f341de1)
+## [2.2.1] - 2026-07-28
 
 ### Fixed
 
-- Non-intrusive error handling that doesn't block UI interaction (5155c57)
-- Clear visual feedback for locked/unlocked name input states (afc8be6)
+- Audio button positioning: changed from `relative` to `absolute` so it stays pinned top-right in the phone frame (0601967)
+- Audio toast popup: use `fixed` positioning with centered transform so it appears correctly in the viewport (0601967)
 
-### Security
+## [2.2.0] - 2026-07-17
 
-- Enhanced spam prevention by disabling name modification when guest is identified from invitation (afc8be6)
-- Multi-layer protection against fake wishes: frontend lock + backend validation + database constraint (afc8be6)
+### Added
+
+- **Docker dev environment**: `Dockerfile` (oven/bun:1) + `docker-compose.yaml` with PostgreSQL 16, healthcheck, persistent volume, auto-init migrations, watch mode
+- **Custom `useMeta` hook**: Replaces `react-helmet-async` — manages title, meta tags, OG/Twitter cards, favicon via native DOM API
+- **Custom `Confetti` component**: Replaces `react-confetti` — uses `motion` animations, lightweight (60 particles)
+- **Plain git hooks**: `.githooks/pre-commit` (lint+format staged files) and `.githooks/pre-push` (lint+format:check+test:coverage+build) via `scripts/install-hooks.sh`
+
+### Changed
+
+- **`framer-motion` → `motion`**: Same API, lighter package. All imports updated to `motion/react`
+- **Tailwind v4**: Removed legacy `tailwind.config.js` — all theme in `src/index.css` `@theme` block; removed `autoprefixer`
+- **`concurrently` → shell backgrounding**: `dev` script now uses `bun run dev:client & bun run server & wait`
+- **`clsx` + `tailwind-merge` → inline `cn()`**: Simplified `filter(Boolean).join(" ")` in `src/lib/utils.js`
+- **`vitest` + `@vitest/coverage-v8` reinstated**: Bun test runner doesn't support `vi.mock("pg")`, so vitest kept for test compatibility
+- **`generate-links-example.js` → `generate-links.js`**: Renamed as default generation script
+- **Docs migrated to GitHub Wiki**: `docs/` directory pushed to `template.wiki.git` and removed from main repo
+
+### Removed
+
+- **Dependencies**: `concurrently`, `clsx`, `class-variance-authority`, `tailwind-merge`, `react-helmet-async`, `react-confetti`, `lint-staged`, `caniuse-lite`, `terser`, `autoprefixer`
+- **Husky**: Replaced with plain `.githooks/` (version-controlled, copied via `bun install`)
+- **File**: `tailwind.config.js`, `vitest.config.js` (recreated), `docs/superpowers/`
+- **Religious quotes**: Removed hadith from `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`, `README.md`
+
+### Fixed
+
+- Repository URL in `CONTRIBUTING.md` and `package.json` (`mrofisr/sakeenah` → `sakeenah-wedding/template`)
+- `scripts/install-hooks.sh` compatibility with Bun shell (replaced `for` loop with explicit `cp`)
 
 ## [2.1.0] - 2026-02-05
 
@@ -301,14 +314,16 @@ git show <commit-hash>
 
 ## Links
 
-- [Repository](https://github.com/mrofisr/sakeenah)
-- [Issues](https://github.com/mrofisr/sakeenah/issues)
-- [Pull Requests](https://github.com/mrofisr/sakeenah/pulls)
+- [Repository](https://github.com/sakeenah-wedding/template)
+- [Issues](https://github.com/sakeenah-wedding/template/issues)
+- [Pull Requests](https://github.com/sakeenah-wedding/template/pulls)
 - [Contributing Guide](CONTRIBUTING.md)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 
-[Unreleased]: https://github.com/mrofisr/sakeenah/compare/v2.1.0...HEAD
-[2.1.0]: https://github.com/mrofisr/sakeenah/compare/v2.0.0...v2.1.0
+[Unreleased]: https://github.com/sakeenah-wedding/template/compare/v2.2.1...HEAD
+[2.2.1]: https://github.com/sakeenah-wedding/template/compare/v2.2.0...v2.2.1
+[2.2.0]: https://github.com/sakeenah-wedding/template/compare/v2.1.0...v2.2.0
+[2.1.0]: https://github.com/sakeenah-wedding/template/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/mrofisr/sakeenah/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/mrofisr/sakeenah/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/mrofisr/sakeenah/compare/v0.9.0...v1.0.0

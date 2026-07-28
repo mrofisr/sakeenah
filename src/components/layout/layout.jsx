@@ -63,7 +63,7 @@ const Layout = ({ children, audioControls }) => {
             whileTap={{ scale: 0.9 }}
             onClick={toggle}
             className={cn(
-              "fixed top-4 right-4 z-50 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-lg border border-rose-100/50",
+              "absolute top-4 right-4 z-50 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-lg border border-rose-100/50",
             )}
           >
             {isPlaying ? (
@@ -95,12 +95,12 @@ const Layout = ({ children, audioControls }) => {
               animate="visible"
               exit="exit"
               className={cn(
-                "fixed bottom-24 left-1/2 transform -translate-x-1/2 z-50",
+                "fixed bottom-24 left-1/2 -translate-x-1/2 z-50",
               )}
             >
               <div
                 className={cn(
-                  "bg-black/80 text-white transform -translate-x-1/2 px-4 py-2 rounded-full backdrop-blur-sm flex items-center space-x-2",
+                  "bg-black/80 text-white px-4 py-2 rounded-full backdrop-blur-sm flex items-center space-x-2",
                 )}
               >
                 <Music className={cn("w-4 h-4 animate-pulse")} />
