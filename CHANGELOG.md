@@ -5,6 +5,13 @@ All notable changes to Sakeenah will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.1] - 2026-07-28
+
+### Fixed
+
+- Audio button positioning: changed from `relative` to `absolute` so it stays pinned top-right in the phone frame (0601967)
+- Audio toast popup: use `fixed` positioning with centered transform so it appears correctly in the viewport (0601967)
+
 ## [2.2.0] - 2026-07-17
 
 ### Added
@@ -313,8 +320,10 @@ git show <commit-hash>
 - [Contributing Guide](CONTRIBUTING.md)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 
-[Unreleased]: https://github.com/mrofisr/sakeenah/compare/v2.1.0...HEAD
-[2.1.0]: https://github.com/mrofisr/sakeenah/compare/v2.0.0...v2.1.0
+[Unreleased]: https://github.com/sakeenah-wedding/template/compare/v2.2.1...HEAD
+[2.2.1]: https://github.com/sakeenah-wedding/template/compare/v2.2.0...v2.2.1
+[2.2.0]: https://github.com/sakeenah-wedding/template/compare/v2.1.0...v2.2.0
+[2.1.0]: https://github.com/sakeenah-wedding/template/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/mrofisr/sakeenah/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/mrofisr/sakeenah/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/mrofisr/sakeenah/compare/v0.9.0...v1.0.0
