@@ -2,6 +2,8 @@
 
 Modern Islamic wedding invitation platform with multi-tenant architecture.
 
+![Preview](public/preview.png)
+
 ```
 bun install && cp .env.example .env
 # edit .env → bun run dev
