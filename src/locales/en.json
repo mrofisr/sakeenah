@@ -1,0 +1,70 @@
+{
+  "app": {
+    "errorTitle": "Invitation Not Found",
+    "errorDesc": "Please check your URL or contact the organizer.",
+    "preparing": "Preparing"
+  },
+  "nav": {
+    "home": "Home",
+    "event": "Events",
+    "location": "Location",
+    "gifts": "Gifts",
+    "wishes": "Wishes"
+  },
+  "landing": {
+    "saveTheDate": "Save the Date",
+    "openInvitation": "Open Invitation"
+  },
+  "hero": {
+    "marriageTitle": "InsyaAllah We Are Getting Married",
+    "guestGreeting": "To Our Honored Guest:",
+    "guestSalutation": "Mr./Mrs./Ms.",
+    "guestFallback": "Our Guest",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  },
+  "events": {
+    "saveTheDate": "Save the Date",
+    "title": "Wedding Event Schedule",
+    "subtitle": "We cordially invite you to celebrate this special day as the beginning of our love journey",
+    "addToCalendar": "Add to Calendar",
+    "googleCalendar": "Google Calendar",
+    "appleCalendar": "Apple Calendar",
+    "outlookCalendar": "Outlook Calendar"
+  },
+  "location": {
+    "eventVenue": "Event Venue",
+    "title": "Location",
+    "viewMap": "View Map"
+  },
+  "gifts": {
+    "subTitle": "Wedding Gift",
+    "title": "Send Gift",
+    "message": "Insya Allah, we will channel all gifts received to masjids and charitable institutions in need",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "accountName": "Account Name"
+  },
+  "wishes": {
+    "subTitle": "Send Your Best Wishes and Prayers",
+    "title": "Wishes & Prayers",
+    "emptyState": "No messages yet. Be the first to share one!",
+    "attending": "Attending",
+    "notAttending": "Cannot attend",
+    "maybe": "Maybe",
+    "nameLabel": "Your Name",
+    "namePlaceholder": "Enter your name...",
+    "attendanceLabel": "Will you attend?",
+    "attendancePlaceholder": "Select attendance...",
+    "wishLabel": "Your wish",
+    "wishPlaceholder": "Send your wishes and prayers to the couple...",
+    "sending": "Sending...",
+    "sendButton": "Send Wish",
+    "thankYou": "Thank You!",
+    "successMessage": "Your message and wishes have been sent. We deeply appreciate your kind words.",
+    "oneMessageLimit": "Each guest can only submit one message.",
+    "close": "Close"
+  }
+}

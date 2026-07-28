@@ -1,4 +1,5 @@
 import { useConfig } from "@/features/invitation/hooks/use-config";
+import { useTranslation } from "@/lib/i18n";
 import { Clock, MapPin, CalendarCheck, ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
 import { formatEventDate } from "@/lib/format-event-date";
@@ -7,6 +8,7 @@ import { cn } from "@/lib/utils";
 
 export default function Location() {
   const config = useConfig(); // Use hook to get config from API or fallback to static
+  const { t } = useTranslation();
   const fadeUp = useMotionPreset("fadeUp");
   const scaleIn = useMotionPreset("scaleIn");
 
@@ -30,14 +32,14 @@ export default function Location() {
               variants={fadeUp}
               className={cn("inline-block text-rose-500 font-medium")}
             >
-              Lokasi Acara
+              {t("location.eventVenue")}
             </motion.span>
 
             <motion.h2
               variants={fadeUp}
               className={cn("text-4xl md:text-5xl font-serif text-gray-800")}
             >
-              Lokasi
+              {t("location.title")}
             </motion.h2>
 
             {/* Decorative Divider */}
@@ -130,7 +132,7 @@ export default function Location() {
                       )}
                     >
                       <ExternalLink className={cn("w-3.5 h-3.5")} />
-                      <span className={cn("font-semibold")}>View Map</span>
+                      <span className={cn("font-semibold")}>{t("location.viewMap")}</span>
                     </motion.a>
                   </div>
                 </div>

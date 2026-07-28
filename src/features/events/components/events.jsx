@@ -4,10 +4,12 @@ import { motion } from "motion/react";
 import { Heart } from "lucide-react";
 import { useMotionPreset, staggerContainer } from "@/lib/motion";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "@/lib/i18n";
 
 export default function Events() {
   const config = useConfig(); // Use hook to get config from API or fallback to static
   const fade = useMotionPreset("fade");
+  const { t } = useTranslation();
   const fadeUp = useMotionPreset("fadeUp");
   const scaleIn = useMotionPreset("scaleIn");
 
@@ -37,7 +39,7 @@ export default function Events() {
               variants={fadeUp}
               className={cn("inline-block text-rose-500 font-medium mb-2")}
             >
-              Catat Tanggal Penting Ini
+              {t("events.saveTheDate")}
             </motion.span>
 
             <motion.h2
@@ -46,15 +48,14 @@ export default function Events() {
                 "text-4xl md:text-5xl font-serif text-gray-800 leading-tight",
               )}
             >
-              Rangkaian Acara Pernikahan
+              {t("events.title")}
             </motion.h2>
 
             <motion.p
               variants={fadeUp}
               className={cn("text-gray-500 max-w-md mx-auto")}
             >
-              Kami Mengundang Anda untuk Merayakan Hari Istimewa Sebagai Awal
-              Perjalanan Cinta Kami
+              {t("events.subtitle")}
             </motion.p>
 
             {/* Decorative Line */}

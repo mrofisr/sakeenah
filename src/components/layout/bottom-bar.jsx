@@ -11,19 +11,20 @@ import {
 import { cn } from "@/lib/utils";
 import { useConfig } from "@/features/invitation/hooks/use-config";
 import { DURATION, useReducedMotionFlag } from "@/lib/motion";
+import { useTranslation } from "@/lib/i18n";
 
 const baseMenuItems = [
-  { icon: Home, label: "Beranda", href: "#home", id: "home" },
-  { icon: CalendarHeart, label: "Event", href: "#event", id: "event" },
-  { icon: MapPin, label: "Lokasi", href: "#location", id: "location" },
+  { icon: Home, labelKey: "nav.home", href: "#home", id: "home" },
+  { icon: CalendarHeart, labelKey: "nav.event", href: "#event", id: "event" },
+  { icon: MapPin, labelKey: "nav.location", href: "#location", id: "location" },
   {
     icon: Gift,
-    label: "Hadiah",
+    labelKey: "nav.gifts",
     href: "#gifts",
     id: "gifts",
     requiresBanks: true,
   },
-  { icon: MessageCircleHeart, label: "Harapan", href: "#wishes", id: "wishes" },
+  { icon: MessageCircleHeart, labelKey: "nav.wishes", href: "#wishes", id: "wishes" },
 ];
 
 /**
@@ -44,6 +45,7 @@ const baseMenuItems = [
  */
 const BottomBar = () => {
   const config = useConfig();
+  const { t } = useTranslation();
   const [active, setActive] = React.useState("home");
   const reduceMotion = useReducedMotionFlag();
 
@@ -139,7 +141,7 @@ const BottomBar = () => {
           <nav className={cn("flex items-center gap-1")}>
             {menuItems.map((item) => (
               <motion.a
-                key={item.label}
+                key={item.labelKey}
                 href={item.href}
                 className={cn(
                   "flex flex-col items-center justify-center py-2 px-2 rounded-xl transition-all duration-300 ease-in-out",
@@ -179,7 +181,7 @@ const BottomBar = () => {
                   }}
                   transition={{ duration: DURATION.fast }}
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </motion.span>
               </motion.a>
             ))}

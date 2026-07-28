@@ -13,6 +13,7 @@ import {
   Calendar as CalendarIcon,
 } from "lucide-react";
 import { formatEventDate } from "@/lib/format-event-date";
+import { useTranslation } from "@/lib/i18n";
 import { useMotionPreset } from "@/lib/motion";
 
 const Modal = ({ isOpen, onClose, children }) => {
@@ -100,6 +101,7 @@ const CalendarButton = ({ icon: Icon, label, onClick, className = "" }) => (
  * @returns {JSX.Element} A JSX element representing the event card.
  */
 const SingleEventCard = ({ eventData }) => {
+  const { t } = useTranslation();
   const [showCalendarModal, setShowCalendarModal] = useState(false);
   const fadeUp = useMotionPreset("fadeUp");
 
@@ -182,7 +184,7 @@ END:VCALENDAR`;
             <Clock className={cn("w-5 h-5 text-rose-500")} />
             <span>
               {eventData.startTime?.substring(0, 5) || eventData.startTime} -{" "}
-              {eventData.endTime?.substring(0, 5) || eventData.endTime} WIB
+              {eventData.endTime?.substring(0, 5) || eventData.endTime}
             </span>
           </div>
           <div className={cn("flex items-center space-x-3")}>
@@ -191,15 +193,14 @@ END:VCALENDAR`;
           </div>
         </div>
       </motion.div>
-
       <Modal
         isOpen={showCalendarModal}
         onClose={() => setShowCalendarModal(false)}
       >
-        <div className={cn("space-y-6 ")}>
-          <div className={cn("flex justify-between  items-center")}>
+        <div className={cn("space-y-6")}>
+          <div className={cn("flex items-center justify-between")}>
             <h3 className={cn("text-xl font-semibold text-gray-800")}>
-              Add to Calendar
+              {t("events.addToCalendar")}
             </h3>
             <motion.button
               whileHover={{ scale: 1.1 }}
@@ -216,7 +217,7 @@ END:VCALENDAR`;
               icon={(props) => (
                 <Globe {...props} className={cn("w-5 h-5 text-rose-500")} />
               )}
-              label="Google Calendar"
+              label={t("events.googleCalendar")}
               onClick={() => window.open(googleCalendarLink(), "_blank")}
             />
 
@@ -224,7 +225,7 @@ END:VCALENDAR`;
               icon={(props) => (
                 <Apple {...props} className={cn("w-5 h-5 text-gray-900")} />
               )}
-              label="Apple Calendar"
+              label={t("events.appleCalendar")}
               onClick={downloadICSFile}
             />
 
@@ -235,7 +236,7 @@ END:VCALENDAR`;
                   className={cn("w-5 h-5 text-blue-600")}
                 />
               )}
-              label="Outlook Calendar"
+              label={t("events.outlookCalendar")}
               onClick={downloadICSFile}
             />
           </div>
