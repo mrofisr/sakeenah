@@ -28,9 +28,9 @@ const config = {
     // Full address of the wedding venue
     address: "Jl. Jend. Sudirman No.1, Jakarta",
     // Image that appears when link is shared on social media
-    ogImage: "/images/og-image.jpg",
+    ogImage: "",
     // Icon that appears in browser tab
-    favicon: "/images/favicon.ico",
+    favicon: "/favicon.svg",
     // List of event agenda/schedule
     agenda: [
       {
