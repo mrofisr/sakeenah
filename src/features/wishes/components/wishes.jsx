@@ -201,14 +201,14 @@ export default function Wishes() {
               variants={fadeUp}
               className={cn("inline-block text-rose-500 font-medium")}
             >
-              t("wishes.subTitle")
+              {t("wishes.subTitle")}
             </motion.span>
 
             <motion.h2
               variants={fadeUp}
               className={cn("text-4xl md:text-5xl font-serif text-gray-800")}
             >
-              t("wishes.title")
+              {t("wishes.title")}
             </motion.h2>
 
             {/* Decorative Divider */}
@@ -456,9 +456,9 @@ export default function Wishes() {
                             className={cn("text-sm font-medium text-gray-700")}
                           >
                             {selectedWish.attendance === "ATTENDING" &&
-              t("wishes.attending")
+                              t("wishes.attending")}
                             {selectedWish.attendance === "NOT_ATTENDING" &&
-                              "t("wishes.notAttending")"}
+                              t("wishes.notAttending")}
                             {selectedWish.attendance === "MAYBE" &&
                               t("wishes.maybe")}
                           </span>
@@ -516,11 +516,10 @@ export default function Wishes() {
                 <div className={cn("flex flex-col items-center space-y-4")}>
                   <CheckCircle className={cn("w-16 h-16 text-emerald-500")} />
                   <h3 className={cn("text-2xl font-serif text-gray-800")}>
-              t("wishes.thankYou")
+                    {t("wishes.thankYou")}
                   </h3>
                   <p className={cn("text-gray-600")}>
                     {t("wishes.successMessage")}
-                    t("wishes.successMessage")
                   </p>
                   <p className={cn("text-sm text-gray-500 italic")}>
                     {t("wishes.oneMessageLimit")}
@@ -616,7 +615,7 @@ export default function Wishes() {
                       >
                         <Calendar className={cn("w-4 h-4")} />
                         <label htmlFor="attendance-select">
-            t("wishes.attendanceLabel")
+                          {t("wishes.attendanceLabel")}
                         </label>
                       </div>
 
@@ -629,7 +628,7 @@ export default function Wishes() {
                         className={cn("sr-only")}
                         aria-hidden="true"
                       >
-              t("wishes.attendancePlaceholder")
+                        <option value="">{t("wishes.attendancePlaceholder")}</option>
                         {options.map((option) => (
                           <option key={option.value} value={option.value}>
                             {option.label}
@@ -656,7 +655,7 @@ export default function Wishes() {
                           {attendance
                             ? options.find((opt) => opt.value === attendance)
                                 ?.label
-              t("wishes.attendancePlaceholder")
+                            : t("wishes.attendancePlaceholder")}
                         </span>
                         <ChevronDown
                           className={cn(
